@@ -1,0 +1,34 @@
+name: install
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  install-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: run the installer test
+        run: |
+          set -o pipefail
+          sh tests/install-test.sh 2>&1 | tee test-output.txt
+
+      # a green run that asserted nothing is not a pass. read the count back out.
+      - name: assert the test actually ran
+        run: |
+          count=$(sed -n 's/^\([0-9][0-9]*\) assertions.*/\1/p' test-output.txt)
+          if [ -z "$count" ] || [ "$count" -lt 1 ]; then
+            echo "the test reported no assertions"
+            exit 1
+          fi
+          echo "$count assertions ran"
+
+      - name: shellcheck
+        run: |
+          if command -v shellcheck >/dev/null 2>&1; then
+            shellcheck --shell=sh install.sh tests/install-test.sh
+          else
+            echo "shellcheck is not on this runner, skipping"
+          fi

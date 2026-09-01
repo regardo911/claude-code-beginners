@@ -1,0 +1,8 @@
+# macOS drops these into every folder you open in Finder. they are not yours and
+# they should never end up in a clone somebody else pulls.
+.DS_Store
+
+# deliberately NOT here: .env*
+# the starter kit ships a .gitignore that carries .env*, and that is the right rule
+# for your project. it is the wrong rule for this repo, because two of the files
+# here are named .env.local.example on purpose and have to stay visible to git.

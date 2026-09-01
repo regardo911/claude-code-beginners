@@ -1,0 +1,8 @@
+<!-- Chapter 5 — the Sink 3 fix: a file map inside CLAUDE.md so Claude reaches straight for the named file instead of scanning the tree (ch05:71-78). Paste this block into your CLAUDE.md. The post-reorg version, after Chapter 8, is in chapters/08-clean-up-the-mess/target-structure.md. -->
+
+## File Structure
+- src/app/page.tsx: main page, renders TaskList
+- src/components/TaskList.tsx: task list UI component
+- src/components/TaskForm.tsx: new task form component
+- src/app/actions.ts: server actions for CRUD operations
+- prisma/schema.prisma: database schema

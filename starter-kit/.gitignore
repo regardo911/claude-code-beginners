@@ -1,0 +1,9 @@
+# Chapter 5 — the seven lines the book has you confirm (ch05:220-230). Claude Code
+# respects your .gitignore, so anything listed here is a directory it stops wading through.
+node_modules/
+.next/
+dist/
+build/
+coverage/
+*.log
+.env*

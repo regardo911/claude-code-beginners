@@ -1,0 +1,18 @@
+<!-- Chapter 12 — what a skill file looks like (ch12:13-30). A taste, not the system; the full SKILL.md system is Book 2. Save it as styling.md and it loads when Claude works on UI components. -->
+
+# Skill: UI Component Builder
+
+## When to use
+When creating or modifying React components that have visual output.
+
+## Instructions
+1. Read design-system.md before writing any CSS
+2. Use Tailwind utility classes, not custom CSS
+3. Create a mobile-first layout (start with mobile, add breakpoints for larger screens)
+4. Every component needs: a loading state, an error state, and an empty state
+5. After building, take a screenshot and evaluate against the design system
+
+## Quality checks
+- Contrast ratio meets WCAG AA (4.5:1 for text)
+- Touch targets are at least 44x44px on mobile
+- No hardcoded colors (use design system tokens)

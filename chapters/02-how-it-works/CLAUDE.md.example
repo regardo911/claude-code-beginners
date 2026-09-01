@@ -1,0 +1,11 @@
+<!-- Chapter 2 — the first CLAUDE.md, before the project exists (ch02:136-146). Three things: what the project is, what stack it uses, and the rules you want followed. Claude Code reads it at the start of every conversation. -->
+
+# My Project
+
+This is a task tracking app built with Next.js (App Router), TypeScript, and Postgres.
+
+## Rules
+- Use server components by default
+- All database queries go through the db/ folder
+- Never add a new package without asking first
+- Run tests before committing

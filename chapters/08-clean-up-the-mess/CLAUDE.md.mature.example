@@ -1,0 +1,29 @@
+<!-- Chapter 8 — what a CLAUDE.md looks like after eight chapters of building (ch08:305-331). Transcribed as printed. -->
+
+<!-- One line to know before you copy it. The last rule reads "Max effort for architecture, medium for features, low for edits", but six other places put features at the default high: ch02:71-76, appendices:31-37, ch05:59, ch05:240, ch10:41 and ch10:76. Only ch05:46 says medium. The template in starter-kit/CLAUDE.md carries the high version. The block below is left exactly as the book prints it. -->
+
+# Task Tracker
+
+Personal task management app. Next.js (App Router), TypeScript, Tailwind CSS, Postgres (via Prisma), NextAuth.
+
+## Architecture
+- Server components by default, client components only for interactivity
+- All database queries through Prisma (no raw SQL)
+- All server actions in src/actions/
+- Tasks always scoped to authenticated user
+
+## File Structure
+- src/app/: pages, layouts, API routes
+- src/components/ui/: generic reusable (Button, Input, Card, Badge)
+- src/components/tasks/: task-specific (TaskList, TaskForm, TaskCard, StatusBadge)
+- src/lib/: utilities (formatDate, validateInput, tokenUtils)
+- src/types/: TypeScript definitions
+- src/actions/: server actions for CRUD and auth
+
+## Design
+Follow design-system.md. All styling through Tailwind.
+
+## Rules
+- New features need tests before merge
+- Run npm audit weekly
+- Max effort for architecture, medium for features, low for edits
